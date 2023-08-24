@@ -1,0 +1,28 @@
+public class insertionsort {
+    public static void print(int[] arr,int n){
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]+"");
+        }
+    }
+    public static void insert(int arr[],int n){
+        for(int i=0;i<n;i++){
+            int curr=arr[i];
+            int j=i-1;
+            while(j>=0 && curr<arr[j]){
+                arr[j+1]=arr[j];
+                j--;
+            }
+             arr[j+1]=curr;
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={3,1,4,2,5};
+        int n=arr.length;
+       
+        System.out.print("before sorting");
+        print(arr,n);
+        insert(arr,n);
+        System.out.print("after sorting");
+        print(arr,n);
+    }
+}
